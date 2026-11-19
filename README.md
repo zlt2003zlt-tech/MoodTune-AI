@@ -1,7 +1,8 @@
-# MoodTune AI
-### AI-Based Facial Emotion Recognition
+MoodTune AI
+AI 기반 얼굴 표정 인식 시스템
+MoodTune AI는 얼굴 표정 이미지를 7가지 범주로 분류하는 교육용 인공지능 프로토타입입니다.
+이 프로젝트에서는 CNN(합성곱 신경망) 모델을 직접 학습하고, 학습된 모델을 Streamlit 웹 애플리케이션에 배포했습니다.
 
-> MoodTune AI is an educational prototype that classifies facial expressions into seven categories. Its output is a model prediction, not a definitive measurement of a person's feelings.
 
 ## 0. 프로젝트 정보
 - 프로젝트명: MoodTune AI
@@ -50,11 +51,31 @@
 - 두 모델 모두 직접 학습했다. Optimizer는 Adam이며, 학습 설정은 최대 15 epochs, batch size 64, seed 42, class weights 적용이다. EarlyStopping, ReduceLROnPlateau, ModelCheckpoint 콜백을 사용했다.
 - **최종 선택:** Baseline CNN. 검증 Macro F1은 Baseline 0.3684, Improved 0.2032였고, 테스트 Accuracy와 Macro F1도 Baseline이 더 높았다.
 
-## 5. 평가 결과
-| 모델 | Test Accuracy | Test Macro F1 |
-|---|---:|---:|
-| Baseline CNN | **0.4242 (42.42%)** | **0.3873** |
-| Improved CNN | 0.2505 (25.05%) | 0.2092 |
+## 5. 평가 결과 (Model Evaluation)
+### 5.1 Baseline CNN Confusion Matrix
+
+Baseline CNN 모델의 감정별 예측 결과를 혼동 행렬로 확인했습니다.
+
+![Baseline CNN Confusion Matrix](screenshots/4.png)
+ 
+
+### 5.2 Emotion-wise F1 Score
+7가지 감정 범주별 F1 Score를 비교하여 각 감정에 대한 분류 성능을 확인했습니다.
+
+![Emotion-wise F1 Score](screenshots/5.png)
+ 
+
+### 5.3 Training Accuracy and Loss Comparison
+Baseline CNN과 Improved CNN의 Training 및 Validation Accuracy와 Loss를 비교했습니다.
+![Training Accuracy and Loss](screenshots/6.png)
+ 
+
+
+
+### 5.4 Precision vs Recall
+Precision과 Recall을 비교하여 모델의 감정 분류 성능을 평가했습니다.
+![Precision vs Recall](screenshots/7.png)
+
 
 - 최종 모델: Baseline CNN (`emotion_model.keras`)
 - 테스트셋에서 Baseline CNN은 7,178장 중 4,133장을 오분류했다(오분류율 약 57.58%).
