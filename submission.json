@@ -1,0 +1,25 @@
+{
+  "student_id": "[202438409]",
+  "name": "[진린툰]",
+  "title": "MoodTune AI",
+  "github_url": "https://github.com/zlt2003zlt-tech/MoodTune-AI",
+  "demo_url": "http://13.124.190.150:8501",
+  "data_type": "Image classification (7 facial-expression classes; FER2013-style folder dataset; exact original source/license to be verified)",
+  "training": {
+    "framework": "TensorFlow/Keras",
+    "train_samples": 6800,
+    "validation_samples": 1200,
+    "test_samples": 7178,
+    "epochs_max": 15,
+    "batch_size": 64,
+    "random_seed": 42
+  },
+  "models": [
+    "Baseline CNN",
+    "Improved CNN"
+  ],
+  "primary_metric": "Macro F1 (test); Accuracy also reported",
+  "selected_model": "Baseline CNN",
+  "test_accuracy": 0.4242128726664809,
+  "test_macro_f1": 0.38727149281870304
+}
