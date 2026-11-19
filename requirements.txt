@@ -1,7 +1,6 @@
-
-streamlit==1.67.0
-tensorflow==2.21.0
-mediapipe==1.2.3
-opencv-contrib-python==5.1.0.95
-numpy==2.2.4
-pillow==13.0.0
+streamlit
+tensorflow
+numpy
+pandas
+Pillow
+opencv-python-headless
